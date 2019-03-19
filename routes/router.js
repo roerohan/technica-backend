@@ -13,7 +13,7 @@ router.post("/login", function (req, res) {
     const name = req.body.name.toString();
     const password = req.body.password.toString();
 
-    if (name == user && password === pass) {
+    if (name === user && password === pass) {
         res.json({"success": 1});
     } else {
         res.json({"success": 0});
@@ -55,7 +55,7 @@ router.post("/register/patient", (req,res)=>{
     patient.name = req.body.name.toString();
     patient.password = req.body.password.toString();
     try{
-        let pat = await patient.save();
+        await patient.save();
         res.json({"success": 1});
     }
     catch(e){
@@ -69,7 +69,7 @@ router.post("/prescribe", (req, res)=>{
     prescription.doctor_id = req.body.doctor_id;
     prescription.medicines = req.body.medicines;
     try{
-        let pres = await prescription.save();
+        await prescription.save();
         res.json({"success": 1});
     }
     catch(e){
