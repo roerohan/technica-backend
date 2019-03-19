@@ -11,7 +11,7 @@ var doctorSchema = new mongoose.Schema({
         required:true,
         unique:true,
     },
-    verification_number:{
+    verification_id:{
         type:String,
         required:true,
         unique:true,

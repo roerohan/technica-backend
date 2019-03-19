@@ -16,13 +16,12 @@ var prescriptionSchema = new mongoose.Schema({
         required:true,
         unique:true,
     },
-    medicines:[medicineSchema]
+    medicines:[{
+        name:String,
+        start:Date,
+        end:Date,
+        time:String,
+    }],
 });
 
-var medicineSchema = new mongoose.Schema({
-    name:String,
-    start:Date,
-    end:Date,
-    time:String,
-})
 module.exports = mongoose.model('Prescription', prescriptionSchema);
