@@ -3,7 +3,3 @@ mongoose.connect("mongodb+srv://thebongy:test123@cluster0-yxlto.mongodb.net/Jala
     if (!err) {console.log('MongoDB Connection Succeeded.')}
     else {console.log('Error in DB connection: '+ err)}
 });
-
-
-
-require('./models');
