@@ -25,10 +25,4 @@ var medicineSchema = new mongoose.Schema({
     end:Date,
     time:String,
 })
-/*
-Fields: name of medicine,
-start date,
-end date,
-time of the day
-*/
 module.exports = mongoose.model('Prescription', prescriptionSchema);
