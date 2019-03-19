@@ -16,9 +16,15 @@ var prescriptionSchema = new mongoose.Schema({
         required:true,
         unique:true,
     },
-    medicines:Object
+    medicines:[medicineSchema]
 });
 
+var medicineSchema = new mongoose.Schema({
+    name:String,
+    start:Date,
+    end:Date,
+    time:String,
+})
 /*
 Fields: name of medicine,
 start date,
