@@ -26,7 +26,7 @@ router.post("/get-patient", async function(req,res){
     try{
         var patient = await Patient.findById(patient_id).exec();
         patient.password = "";
-        var prescriptions = await Prescription.find({"participant_id":participant_id}).lean().exec();
+        var prescriptions = await Prescription.find({"patient_id":patient_id}).lean().exec();
         patient.prescriptions = prescriptions;
         res.json(patient);
     }
